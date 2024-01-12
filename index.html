@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Troi</title>
+</head>
+<body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <div class="hero">
+        <nav class="navbar-transparent">
+            <a href="index.html" class="logo"><img src="pic/logo1.png" class="logo" id="logo" alt="logo"></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="more.html">More</a></li>
+        </ul>
+        <a href="contact.html" target="_blank">
+        <button type="button" class="button">
+            <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="login">Contact Me</span>
+        </button>
+        </a>
+        <ion-icon name="menu-outline" class="user-pic" onclick="toggleMenu()" style="color: white;"></ion-icon>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+            <div class="user-info">
+                <a href="index.html"><img src="pic/logo1.png" id="logo"></a>
+            </div>
+            <hr>
+            <a href="index.html" class="sub-menu-link">
+                <p>Home</p>
+                <span></span>
+            </a>
+            <a href="aboutme.html" class="sub-menu-link">
+                <p>About Me</p>
+                <span></span>  
+            </a>
+            <a href="more.html" class="sub-menu-link">
+                <p>More</p>
+                <span></span>  
+            </a>
+            <a href="contact.html" class="sub-menu-link">
+                <p>Contact Me</p>
+                <span></span>  
+            </a>
+            </div>
+        </div>
+        </nav>
+    </div>
+
+    <div class="video-container">
+        <video id="backgroundVideo" autoplay loop muted>
+            <source src="video/finals.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <button id="muteButton" onclick="toggleMute()"><ion-icon id="volumeIcon" name="volume-mute-outline"></ion-icon></button>
+
+    <div class="body">
+        <div class="typing-container">
+            <h2 class="typing-text-container">
+                <span class="typing-text">Hello</span>
+            </h2>
+        </div>
+        <h1>I'm Roi Yvann <span class="cambe">Cambe</h1>
+        <p>I'm 18 years old, a college student pursuing a Bachelor of Science in Information Technology at Pamantansan ng Lungsod ng Pasig.</p>
+        <div class="box">
+        <a href="aboutme.html">
+            <div class="btn btn-two">
+                <span class="span">MORE</span>
+            </div>
+        </a>
+        </div>
+    </div>
+    <div class="picture">
+        <img src="pic/roi.png" class="roi" id="picture" alt="My Picture">
+    </div>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* navigation bar */
+
+    body {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .hero{
+        width: 100%;
+        background-color: white;
+        color: black;
+        
+    }
+
+    nav {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('video/finals.mp4');
+        background-size: cover;
+        width: 100%;
+        padding: 10px 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        font-family: 'Poppins', sans-serif;
+        position: fixed;
+        z-index: 2; /* Ensure the navbar is above the video */
+        top: 20px;
+    }
+
+    .logo{
+        width: 180px;
+        height: 50px;
+        cursor: pointer;
+    }
+
+    .user-pic{
+        border-radius: 100px;
+        cursor: pointer;
+        margin-left: 30px;
+        font-size: 60px;
+        display: none;
+    }
+
+    nav ul{
+        width: 100%;
+        text-align: right;
+    }
+
+    nav ul li{
+        display: inline-block;
+        list-style-type: none;
+        display: inline-block;
+        padding: 0px 5px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        border-radius: 15%;
+        padding: 20px 20px;
+    }
+
+    nav ul li a:hover{
+        background: rgba(105, 164, 255, 0.6);
+        color: #001B45;
+    }
+
+    nav ul li a:active{
+        background-color: #153F80;
+    }
+
+    .navbar-transparent {
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .navbar-transparent a {
+        color: white !important;
+    }
+
+    .icon{
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px 0 16px;
+        color: white;
+        height: 100%;
+        font-size: 2em;
+        background-color: rgba(0, 0, 0 , 0.2);
+    }
+
+    .sub-menu-wrap{
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        z-index: 1;
+        background: rgba(8, 32, 138, 0.2);
+    }
+
+    .sub-menu-wrap.open-menu{
+        max-height: 400px;
+    }
+
+    .sub-menu{
+        background: rgba ;
+        padding: 20px;
+    }
+
+    .user-info{
+        display: flex;
+        align-items: center;
+    }
+
+    .user-info h3{
+        font-weight: 500;
+    }
+
+    .user-info img{
+        width: 120px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+
+    .sub-menu hr{
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: black;
+        margin: 15px 0 10px;
+    }
+
+    .sub-menu-link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        margin: 12px 0;
+        border-radius: 100px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .sub-menu-link:hover{
+        background: rgba(0, 83, 238, 0.555);
+        color: #00378B;
+    }
+
+    .sub-menu-link p{
+        width: 100%;
+    }
+
+    .sub-menu-link:hover p{
+        font-weight: 600;
+    }
+
+    .button {
+        display: inline-flex;
+        height: 50px;
+        padding: 0;
+        background-color: #2056A8;
+        overflow: hidden;
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .button:hover{
+        background-color: #69A4FF; 
+    }
+
+    .button:active{
+        background-color: #153F80;
+    }
+
+    .login{
+        font-family: 'Poppins', sans-serif;
+        width: 110px;
+        padding: 0 0 0 7px;
+        display: inline-flex;
+        align-items: center;
+        color: white;
+        height: 100%;
+    }
+
+    /* video background*/
+
+    .video-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #muteButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(39, 39, 39, 0.192);
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer; /* Add this line */
+        z-index: 1;
+    }
+
+    #muteButton ion-icon {
+        color: rgb(156, 156, 156);
+        font-size: 24px;
+        cursor: pointer; /* Add this line */
+    }
+
+
+    /* body */
+    
+    .body{
+        font-family: 'Poppins', sans-serif;
+        margin-left: 8%;
+        margin-top: 12%;
+        margin-right: 60%;
+    }
+
+    .body h1{
+        font-size: 50px;
+        color: #00A7FF;
+        margin: 50px 0      ; 
+        text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.521);
+        cursor: default;
+    }
+
+    .cambe{
+        color: #0040A0;
+    }
+        
+    .typing-container {
+        overflow: hidden;
+        max-width: 225px;
+    }
+
+    .typing-text-container {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+        border-right: 2px solid #ffffff;
+        animation: typing-container .5s steps(40) forwards, blink-cursor 1s infinite;;
+    }
+
+    .typing-text {
+        font-size: 60px;
+        color: #69A4FF;
+        letter-spacing: 20px;
+        font-family: 'Alex Brush', cursive;
+    }
+
+    @keyframes typing-container {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-cursor {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #ffffff; }
+}
+
+
+    .hello {
+        display: inline-block;
+        font-size: 24px;
+        font-family: 'Courier New', Courier, monospace;
+        border-right: 2px solid #333; /* Cursor effect */
+        animation: typing 3s steps(40) infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    .body p{ 
+        color: white;
+        line-height: 30px;
+        margin-bottom: 20px;
+        cursor: default;
+    }
+
+    .box{
+        height: 250px;
+        width: 250px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn {
+        line-height: 50px;
+        height: 50px;
+        text-align: center;
+        width: 250px;
+        cursor: pointer;
+    }
+
+    .btn-two {
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative; 
+    }
+
+    .span{
+        z-index: 2; 
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%; 
+        color: rgb(255, 255, 255);
+    }
+
+    .btn-two:hover .span{
+        color: #ffffff;
+    }
+
+    .btn-two::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0);
+        background: rgba(28, 136, 238, 0.308);
+    }
+
+    .btn-two::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgb(173, 173, 173);
+        background: rgba(28, 136, 238, 0.308);
+    }
+
+
+    .btn-two:hover::before {
+        transform: rotate(-45deg);
+        border: 1px solid rgba(255, 255, 255, 0.199);
+        background-color: rgba(0, 0, 0, 0);
+        cursor: default;
+    }
+
+    .btn-two:hover::after {
+        transform: rotate(45deg);
+        border: 1px solid rgba(255, 255, 255, 0.199);
+        background-color: rgba(255,255,255,0);
+        cursor: default;
+    }
+
+    .btn-two .span:active{
+        color: #24B8F9;
+        font-size: 12px;
+    }
+
+    .picture{
+        position: absolute;
+        width: 45%;
+        height: 80%;
+        bottom: 0;
+        right: 4px;
+        margin: auto;
+    }
+
+    .picture img{
+        position: absolute;
+        height: 90%;
+        bottom: 120px;
+        border-radius: 100%;
+    }
+
+    .picture img:hover{
+        box-shadow: 0 0 50px #ffffff;
+    }
+
+    #picture{
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    @media only screen and (max-width: 880px){
+    nav{
+        padding: 13px 20px;
+    }
+    }
+
+    @media only screen and (max-width: 740px){
+    nav ul{
+        display: none;
+    }
+
+    .user-pic{
+        display: block;
+    }
+    
+    .icon{
+        padding: 16px;
+    }
+
+    .login, .icon{
+        display: none;
+    }
+    }
+
+    @media only screen and (max-width: 300px){
+    .logo{
+        display: none;
+    }
+
+    .user-pic{
+        align-items: center;
+        width: 100%;
+    }
+    }
+
+    /* body */
+
+    @media only screen and (max-width: 1733px){
+        .picture img{
+            height: 90%;
+            right: 70px;
+            bottom: 100px;
+        }
+        
+        .body{
+            width: 40%;
+        }
+
+        .body p{
+            margin-bottom: 0px;
+        }
+
+        .box{
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    @media only screen and (max-width: 1435px){
+        .picture img{
+            height: 85%;
+            right: 70px;
+            bottom: 150px;
+        }
+    }
+
+    @media only screen and (max-width: 1350px){
+        .picture img{
+            height: 80%;
+            right: 60px;
+            bottom: 170px;
+        }
+    }
+
+    @media only screen and (max-width: 1200px){
+        .picture img{
+            height: 75%;
+            right: 40px;
+            bottom: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 1140px){
+        .picture img{
+            height: 70%;
+            right: 40px;
+            bottom: 200px;
+        }
+    }
+
+    @media only screen and (max-width: 1100px){
+        .picture img{
+            height: 67%;
+            right: 20px;
+            bottom: 225px;
+        }
+    }
+
+    @media only screen and (max-width: 930px){
+        .body{
+            margin-top: 70%;
+            margin-right: 5%;
+        }
+
+        .picture img{
+            height: 60%;
+            right: 13em;
+            bottom: 400px;
+        }
+    }
+
+    @media only screen and (max-width: 880px){
+        .body{
+            margin-top: 90%;
+            margin-right: 5%;
+        }
+
+        .picture{
+            right: 13em;
+        }
+
+        .picture img{
+            height: 60%;
+            left: -60px;
+            bottom: 370px;
+        }
+    }
+
+    @media only screen and (max-width: 680px){
+        .body{
+            margin-top: 40em;
+            margin-right: 5%;
+        }
+
+        .picture{
+            right: 13em;
+        }
+
+        .picture img{
+            height: 60%;
+            left: -60px;
+            bottom: 370px;
+        }
+    }
+
+    @media only screen and (max-width: 640px){
+        .body{
+            margin-top: 40em;
+            margin-right: 5%;
+        }
+
+        .picture{
+            right: 11.5em;
+        }
+
+        .picture img{
+            height: 60%;
+            left: -60px;
+            bottom: 370px;
+        }
+    }   
+</style>
+<script type="text/javascript">
+    let subMenu = document.getElementById("subMenu");
+  
+    function toggleMenu() {
+      subMenu.classList.toggle("open-menu");
+    }
+  
+    document.getElementById("logo").onclick = function () {
+      window.location = 'index.html';
+    }
+  
+    var video = document.getElementById("backgroundVideo");
+    var volumeIcon = document.getElementById("volumeIcon");
+
+    function toggleMute() {
+      if (video.muted) {
+        video.muted = false;
+        volumeIcon.name = "volume-high-outline";
+      } else {
+        video.muted = true;
+        volumeIcon.name = "volume-mute-outline";
+      }
+    }
+
+    var pictureElement = document.getElementById('picture');
+    var fadeOutTimer;
+    var fadeInTimer;
+    var fadeMouseTimer;
+
+    function fadeOut() {
+        pictureElement.style.opacity = 0;
+        document.body.style.cursor = 'none';
+
+        fadeInTimer = setTimeout(function () {
+        pictureElement.style.opacity = 1;
+
+        document.body.style.cursor = 'auto';
+        }, 80000);
+
+        setTimeout(resetTimers, 90000);
+    }
+
+    function resetTimers() {
+        clearTimeout(fadeOutTimer);
+        clearTimeout(fadeInTimer);
+        clearTimeout(fadeMouseTimer);
+
+        fadeOutTimer = setTimeout(fadeOut, 3000);
+    }
+
+    function handleMouseMove() {
+        pictureElement.style.opacity = 1;
+        document.body.style.cursor = 'auto';
+
+        clearTimeout(fadeOutTimer);
+        fadeOutTimer = setTimeout(fadeOut, 3000); 
+    }
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    window.onload = function () {
+        fadeOutTimer = setTimeout(fadeOut, 3000);
+    };
+  </script>
+
+</body>
+</html>

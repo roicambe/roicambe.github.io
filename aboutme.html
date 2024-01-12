@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+/* navigation bar */
+    
+    .hero{
+        width: 100%;
+        background-color: white;
+        color: black;
+    }
+    
+    nav{
+        background: linear-gradient(to right, #001E4B, #4891FF);
+        width: 100%;
+        padding: 10px 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        font-family: 'Poppins', sans-serif;
+        z-index: 1;
+    }
+    
+    .logo{
+        width: 180px;
+        height: 50px;
+        cursor: pointer;
+    }
+    
+    .user-pic{
+        border-radius: 100px;
+        cursor: pointer;
+        margin-left: 30px;
+        font-size: 60px;
+        display: none;
+    }
+    
+    nav ul{
+        width: 100%;
+        text-align: right;
+    }
+    
+    nav ul li{
+        display: inline-block;
+        list-style-type: none;
+        display: inline-block;
+        padding: 0px 5px;
+    }
+    
+    nav ul li a{
+        color: white;
+        text-decoration: none;
+        border-radius: 15%;
+        padding: 20px 20px;
+    }
+    
+    nav ul li a:hover{
+        background-color: #69A4FF;
+        color: #001B45;
+    }
+    
+    nav ul li a:active{
+        background-color:   #153F80;
+    }
+    
+    .icon{
+        display: inline-flex;
+        align-items: center;
+        padding: 0 10px 0 16px;
+        color: white;
+        height: 100%;
+        font-size: 2em;
+        background-color: rgba(0, 0, 0 , 0.2);
+    }
+    
+    .sub-menu-wrap{
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        max-height: 0px;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .sub-menu-wrap.open-menu{
+        max-height: 400px;
+    }
+    
+    .sub-menu{
+        background: #5B9CFF;
+        padding: 20px;
+    }
+    
+    .user-info{
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-info h3{
+        font-weight: 500;
+    }
+    
+    .user-info img{
+        width: 120px;
+        border-radius: 50%;
+        margin-right: 15px;
+    }
+    
+    .sub-menu hr{
+        border: 0;
+        height: 1px;
+        width: 100%;
+        background: black;
+        margin: 15px 0 10px;
+    }
+    
+    .sub-menu-link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        margin: 12px 0;
+        border-radius: 100px;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .sub-menu-link:hover{
+        background-color: #69A4FF;
+        color: #00378B;
+    }
+    
+    .sub-menu-link p{
+        width: 100%;
+    }
+    
+    .sub-menu-link:hover p{
+        font-weight: 600;
+    }
+    
+    .button {
+        display: inline-flex;
+        height: 50px;
+        padding: 0;
+        background-color: #2056A8;
+        overflow: hidden;
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .button:hover{
+        background-color: #69A4FF; 
+    }
+    
+    .button:active{
+        background-color: #153F80;
+    }
+    
+    .login{
+        font-family: 'Poppins', sans-serif;
+        width: 110px;
+        padding: 0 0 0 7px;
+        display: inline-flex;
+        align-items: center;
+        color: white;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: 880px){
+        nav{
+            padding: 13px 20px;
+        }
+    }
+
+    @media only screen and (max-width: 740px){
+        nav ul{
+            display: none;
+        }
+
+        .user-pic{
+            display: block;
+        }
+        
+        .icon{
+            padding: 16px;
+        }
+
+        .login, .icon{
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: 300px){
+        .logo{
+            display: none;
+        }
+
+        .user-pic{
+            align-items: center;
+            width: 100%;
+        }
+    }
+/* body */
+    .body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        background-color: white;
+    }
+/* gallery */
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh; /* Use min-height for full screen height */
+    }
+
+    .gallcon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(7, 7, 7);
+    }
+
+    .gallery{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 70%;
+        height: 70vh;
+        background-color: #4891FF;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 10px;
+        transition: transform 0.7s;
+        position: absolute;
+        top: 18%;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    .gallery:hover{
+        transform: scale(1.2);
+    }
+
+    .gal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img{
+        width: 200px;
+        height: 500px;
+        margin: 10px;
+        border-radius: 50px;
+        background: url(pic/hob.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: width 0.5s;
+    }
+
+    .img:hover  {
+        box-shadow: 0 0 20px 10px #154797;
+    }
+
+    .img:nth-child(2)  {
+        background:url(pic/skills.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .img:nth-child(3)  {
+        background:url(pic/strength.png);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .img:nth-child(4){
+        background:url(pic/career.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .img:nth-child(2):hover  {
+        box-shadow: 0 0 20px 10px black;
+    }
+
+    .img:nth-child(3):hover  {
+        box-shadow: 0 0 20px 10px #fff;
+    }
+
+    .img:nth-child(4):hover{
+        box-shadow: 0 0 20px 10px #B7A05B;
+    }
+
+    .img h3{
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        opacity: 0;
+        transition: bottom 0.5s, opacity 0.2s;
+    }
+
+    .img:hover{
+        width: 400px;
+        cursor: pointer;
+    }
+
+    .img:hover h3{
+        opacity: 1;
+        bottom: 25px;
+    }
+
+    @media only screen and (max-width: 1600px){
+
+        .img{
+            height: 400px;
+        }
+
+        .gallery{
+            width: 80%;
+        }
+
+        .gallery:hover{
+               transform: scale(1);
+        }
+
+    }        
+
+    @media only screen and (max-width: 1400px){
+
+        .gallery{
+            width: auto;
+        }
+
+        .gallery:hover{
+            transform: scale(1);
+        }
+
+    }
+
+    @media only screen and (max-width: 1150px){
+
+        .gallery:hover{
+            transform: scale(1);
+        }
+
+        .img:hover{
+            width: 300px;
+        }
+
+    }
+        
+    @media only screen and (max-width: 1090px){
+
+        .gallery:hover{
+            transform: scale(1);
+        }
+
+        .img:hover{
+            width: 200px;
+        }
+
+    }
+        
+    @media only screen and (max-width: 922px){
+
+        .gallery{
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery:hover{
+             transform: scale(1);
+        }
+
+        .gal{
+            height: 60vh;
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 40px;
+        }
+
+        .img{
+            width: 200px;
+            height: 200px;
+            transition: 0.3s;
+        }
+
+        .img:hover{
+            width: 200px;
+            transform: scale(1.1);
+        }
+
+    }
+/* hobbies */
+    .container1{
+        font-family: 'Roboto Mono', monospace;
+        width: 100%;
+        height: 100vh;
+        background-image: url(pic/bg.jpg);
+        background-position: center;
+        background-size: cover;
+        padding-left: 8%;
+        padding-right: 8%;
+        box-sizing: border-box;
+        cursor: default;
+    }
+
+    .row{
+        display: flex;
+        height: 88%;
+        align-items: center;
+    }
+
+    .col h1{
+        color: #fff;
+        font-size: 100px;
+        margin-bottom: 20px;
+    }
+
+    .col p{
+        color: #fff;
+        font-size: 15px;
+        line-height: 40px;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 120px;
+    }
+
+    .card{
+        width: 300px;
+        height: 350px;
+        display: inline-block;
+        border-radius: 10px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+        margin: 20px 15px;
+        background-image: url(pic/game.png);
+        background-position: right;
+        background-size: cover;
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background-image 0.3s ease-in;
+    }
+
+    .zoomed {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px white;
+    }
+
+    .card:nth-child(1):hover{
+        background-image: url(pic/game1.png);
+    }
+
+    .card:nth-child(2){
+        background-image: url(pic/bike.jpg);
+        background-position: 50%;
+    }
+
+    .card:nth-child(2):hover{
+        background-image: url(pic/bike1.jpg);
+    }
+
+    .card:nth-child(3){
+        background-image: url(pic/anime1.jpg);
+        background-position: 50%;
+    }
+
+    .card:nth-child(3):hover{
+        background-image: url(pic/anime.jpg);
+        background-position: 60%;
+    }
+
+    .card:nth-child(4){
+        background-image: url(pic/manhwa1.jpg);
+        background-position: 50% 0%;
+    }
+
+    .card:nth-child(4):hover{
+        background-image: url(pic/manhwa.jpg);
+
+    }
+
+    .card p{
+        opacity: 0;
+        font-size: 11px;
+        transition: opacity 0.5s ease, font-size 0.5s ease;
+        line-height: 30px;
+    }
+
+    .card:hover p{
+        opacity: 1;
+        font-size: 11px;
+    }
+
+
+    .card h5{
+        color: white;
+        font-size: 20px;
+    }
+    
+    /* skills */
+    .skills {
+      font-family: 'Roboto Mono', monospace;
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(7, 7, 7);
+      background-position: center;
+      background-size: cover;
+      padding-left: 8%;
+      padding-right: 8%;
+      box-sizing: border-box;
+      cursor: default;
+    }
+
+    .container12 {
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container12 h1 {
+      margin-top: 20px;
+    }
+
+    .container2 {
+      width: 100%;
+      margin-top: 20px;
+      background-color: #153F80;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .b-container {
+      max-width: 100em;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    .t-content {
+      margin: 0 200px;
+    }
+
+    .b-container h1 {
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .b-container p {
+      color: rgba(255, 255, 255, 0.753);
+      font-size: 15px;
+    }
+
+    .c-content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card2 {
+      width: 325px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 20px;
+      transition: box-shadow 0.5s ease;
+    }
+
+    .card2:hover {
+      box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.568);
+    }
+
+    .video-container {
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+      transition: opacity 0.5s ease;
+    }
+
+    .video-container:hover video {
+      opacity: 1;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #363636d8;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* strenghts and weaknesses*/
+    .container123{
+        width: 100%;
+        height: 100vh;
+        background-image: url(pic/bg2.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .strength{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100%;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .title-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #left-section, #right-section {
+      flex: 1;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    .section-title {
+      font-size: 60px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .card-container1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .box {
+      width: 45%;
+      height: 300px;
+      margin: 2.5%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      cursor: default;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    .box p {
+      font-size: 20px;
+      margin: 10px 0;
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      color: black;
+      font-weight: 800;
+    }
+
+    .hidden-text {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .box .hidden-text{
+        font-size: 14px;
+        text-shadow: 0 0 2px white;
+    }
+
+    /* Background images for each box with adjustments */
+    #box5 { 
+      background-image: url('pic/s1.jpg'); 
+    }
+
+    #box5 .hidden-text{
+      top: 55%;
+    }
+
+    #box6 { 
+      background-image: url('pic/s2.jpg');
+    }
+
+    #box6 .hidden-text{
+      top: 55%;
+    }
+
+    #box7 { 
+      background-image: url('pic/s3.jpg');
+    }
+
+    #box7 .hidden-text{
+      top: 50%;
+    }
+
+    #box8 { 
+      background-image: url('pic/w1.jpg'); 
+    }
+
+    #box8 .hidden-text{
+      top: 52%;
+    }
+
+    #box9 { 
+      background-image: url('pic/w2.jpg'); 
+    }
+
+    #box9 .hidden-text{
+      top: 54%;
+    }
+
+
+    #box10 { 
+      background-image: url('pic/w3.jpg'); 
+    }
+
+    #box10 .hidden-text{
+      top: 48%;
+    }
+
+    #box11 { 
+      background-image: url('pic/w4.jpg'); 
+    }
+
+    #box11 .hidden-text{
+      top: 42%;
+    }
+
+    /* Box Design and Hover Effect */
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px white;
+    }
+
+    .box:hover .hidden-text {
+      opacity: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+      #left-section {
+        min-height: 742px;
+      }
+
+      .box {
+        width: 100%;
+        height: 150px;
+      }
+
+      .section-title {
+        font-size: 36px;
+      }
+    }
+
+    /* career */
+
+    .career {
+        font-family: 'Roboto Mono', monospace;
+        width: 100%;
+        height: 100vh;
+        background-image: url(pic/bg3.jpg);
+        background-position: center;
+        background-size: cover;
+        padding-left: 8%;
+        padding-right: 8%;
+        box-sizing: border-box;
+        cursor: default;
+    }
+
+    .container1234 {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container1234 h1 {
+        margin-top: 20px;
+    }
+
+    .container3 {
+        width: 100%;
+        margin-top: 20px;
+        background-color: #4891FF;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .b-container1 {
+        max-width: 100em;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    .t-content1 {
+        margin: 0 200px;
+    }
+
+    .b-container1 h1 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .b-container1 p {
+        color: rgba(255, 255, 255, 0.753);
+        font-size: 15px;
+    }
+
+    .c-content1 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card21 {
+        width: 325px;
+        background: #f0f0f0;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 20px;
+        transition: box-shadow 0.5s ease;
+    }
+
+    .card21:hover {
+        box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.568);
+    }
+
+    .image-container1 {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-container1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-container1:hover img {
+        opacity: 1;
+    }
+
+    .card-content1 {
+        padding: 16px;
+    }
+
+    .card-content1 h3 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .card-content1 p {
+        color: #363636d8;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    /* footer */ 
+
+    footer {
+      text-align: justify;
+      text-align: center;
+      background-color: #111;
+      color: #fff;
+      padding: 100px 0 70px 60px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cont {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+    }
+
+    .about{
+      text-align: justify;
+    }
+
+    .footer-item {
+      flex: 1 0 300px;
+    }
+
+    .footer-item p{
+      color: #8C8A8A;
+    }
+
+    .footer-item a {
+      text-decoration: none;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .footer-item a {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .footer-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2056A8;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .footer-item a:hover {
+    color: #4891FF;
+  }
+
+  .footer-item a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* back to top button  */
+  #muteButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(39, 39, 39, 0.192);
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer; /* Add this line */
+            z-index: 1;
+        }
+
+        #muteButton ion-icon {
+            color: rgb(156, 156, 156);
+            font-size: 24px;
+            cursor: pointer; /* Add this line */
+        }
+
+/* responsive */ 
+@media only screen and (max-width: 1600px){
+    .card{
+        height: 275px;
+        width: 225px;
+    }
+
+    .img:hover{
+        width: 325px;
+    }
+
+    .card p{
+        line-height: 17px;
+    }
+
+    /* skills */ 
+    .container2{
+        margin-top: 70px;
+        height: 80%;
+    }
+
+    .t-content h1{
+        font-size: 20px;
+        margin: 0 0 5px 0;
+    }
+
+    .t-content p{
+        font-size: 12px;
+    }
+
+    .card2{
+        height: 450px;
+        width: 280px;
+    }
+
+    .video-container{
+        height: 200px;
+    }
+
+    .card-content h3{
+        font-size: 25px;
+    }
+
+    .card-content p{
+        line-height: 20px;
+        font-size: 12px;
+        color: black;
+    }
+
+    /* strength */ 
+    .section-title {
+        padding-top: 10%;
+      font-size: 30px;
+    }
+
+    .box{
+        width: 30%;
+        height: 230px;
+    }
+
+    .box p{
+        font-size: 16px;
+    }
+
+    .box .hidden-text{
+        font-size: 10px;
+    }
+
+    #box6 .hidden-text{
+        top: 53%;
+    }
+
+    #box9 .hidden-text{
+        top: 50%;
+    }
+
+    #box10 .hidden-text{
+        top: 40%;
+    }
+
+    #box11 .hidden-text{
+        top: 35%;
+    }
+
+    .container3{
+        margin-top: 70px;
+        height: 80%;
+    }
+
+    .t-content1 h1{
+        font-size: 20px;
+        margin: 0 0 5px 0;
+    }
+
+    .t-content1 p{
+        font-size: 12px;
+    }
+
+    .card21{
+        height: 450px;
+        width: 280px;
+    }
+
+    .image-container1{
+        height: 200px;
+    }
+
+    .card-content1 h3{
+        font-size: 25px;
+    }
+
+    .card-content1 p{
+        line-height: 20px;
+        font-size: 12px;
+        color: black;
+    }
+
+}
+</style>
+</head>
+<body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <div class="hero">
+        <nav>
+            <a href="index.html" class="logo"><img src="pic/logo1.png" class="logo" id="logo" alt="logo"></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="more.html">More</a></li>
+        </ul>
+        <a href="contact.html" target="_blank">
+        <button type="button" class="button">
+            <span class="icon">
+            <ion-icon name="person-outline"></ion-icon>
+            </span>
+            <span class="login">Contact Me</span>
+        </button>
+        </a>
+        <ion-icon name="menu-outline" class="user-pic" onclick="toggleMenu()"></ion-icon>
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+            <div class="user-info">
+                <a href="index.html"><img src="pic/logo1.png" id="logo"></a>
+            </div>
+            <hr>
+            <a href="index.html" class="sub-menu-link">
+                <p>Home</p>
+                <span></span>
+            </a>
+            <a href="aboutme.html" class="sub-menu-link">
+                <p>About Me</p>
+                <span></span>  
+            </a>
+            <a href="more.html" class="sub-menu-link">
+                <p>More</p>
+                <span></span>  
+            </a>
+            <a href="contact.html" class="sub-menu-link">
+                <p>Contact Me</p>
+                <span></span>  
+            </a>
+            </div>
+        </div>
+        </nav>
+    </div>
+    <script type="text/javascript">
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+    
+        Document.getElementById("logo").onclick = function() {
+            window.location='index.html'; 
+        }
+    </script>
+
+    <div class="body">
+        <div class="container">
+            <div class="gallcon">
+                <div class="gallery">
+                    <div class="gal">
+                        <div class="img" id="scrollButton" onclick="scrollToSection('hobbies')"><h3>Hobbies</h3></div> 
+                        <div class="img" id="scrollButton" onclick="scrollToSection('skills')"><h3>Skills or Talent</h3></div>
+                        <div class="img" id="scrollButton" onclick="scrollToSection('strength')"><h3>Strength and Weaknesses</h3></div></a>
+                        <div class="img" id="scrollButton" onclick="scrollToSection('career')"><h3>Career</h3></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container1" id="hobbies">
+                <div class="row">  
+                    <div class="col">
+                        <h1>Hobbies</h1>
+                        <p>My hobbies have faded with time, and now all I do is play games, browse social media, and lie in bed. I find it difficult to conceive of hobbies these days.</p>
+                    </div>
+                    <div class="col">
+                        <div class="card-container">
+                            <div class="card" id="box1">
+                                <h5>Playing Games</h5>
+                                <p>Though it never really took off, playing video games is my true hobby. 
+                                    I also spend money buying games from stores like Steam, Epic Games, and Ubisoft Store.</p>
+                            </div>
+                            <div class="card" id="box2">
+                                <h5>Cycling</h5>
+                                <p>I no longer have the same enthusiasm for riding, as evidenced by my physique now. 
+                                    However, I'm going to revive my passion for biking in 2024.</p>
+                            </div>
+                            <div class="card" id="box3">
+                                <h5>Watching Anime</h5>
+                                <p>During my high school years, I enjoyed watching anime, kdrama, and even western shows. 
+                                    However, as time went on, I stopped watching, and now that I'm in college, it's much harder for me to watch. 
+                                    yet I included it here because I enjoy watching anime; I simply have to be more time-efficient.</p>
+                            </div>
+                            <div class="card" id="box4">
+                                <h5>Reading Manhwa</h5>
+                                <p>Why am I limited to reading manhwa? I dislike reading manga since it's in black and white, 
+                                    and that's because this is my kind. Because there are no illustrations in novels, 
+                                    I detest them even more because I can't bear to think about how the characters might look as I read.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="skills" id="skills">
+              <div class="container12">
+                <div class="container2">
+                  <div class="b-container">
+                    <div class="t-content">
+                      <h1>Skills or Talent</h1>
+                      <p>I struggled to identify my talents and skills because I haven't realized what I'm really good at.
+                        However, there are things I can do that the average person can't do;
+                        I just don't think of them as talents because I'm not that good at them;
+                        I'm just learning things, which is why I know some of them.</p>
+                    </div>
+                            <div class="c-content">
+                                <div class="card2" id="card1">
+                                    <div class="video-container">
+                                        <video src="video/curious.mp4" muted loop></video>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Curiosity</h3>
+                                        <p>I view curiosity as a talent since it motivates me to pursue opportunities that would otherwise be
+                                            out of my reach and gives me new things to investigate and discover.</p>
+                                    </div>
+                                </div>
+                                <div class="card2" id="card2">
+                                    <div class="video-container">
+                                        <video src="video/prog.mp4" muted loop></video>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Programming</h3>
+                                        <p>We are aware that every student taking classes in the BSIT course has the same skill, which is
+                                            "programming".</p>
+                                    </div>
+                                </div>
+                                <div class="card2" id="card3">
+                                    <div class="video-container">
+                                        <video src="video/creative.mp4" muted loop></video>
+                                    </div>
+                                    <div class="card-content">
+                                        <h3>Creativity</h3>
+                                        <p>Some of the people I've worked with in groups and some of my friends tell me that I have amazing
+                                            skills, which I don't think I have because I'm not creative. Nevertheless, I appreciate their views
+                                            and that's why I included it.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container123" id="strength">
+                <div class="strength">
+                    <div id="left-section">
+                        <div class="title-container">
+                        <h1 class="section-title">Strengths</h1>
+                        </div>
+                        <div class="card-container1">
+                        <div id="box5" class="box">
+                            <p>Solving Problem</p>
+                            <p class="hidden-text">
+                            i see myself a strong at problem solving but not in math.</p>
+                        </div>
+                        <div id="box6" class="box">
+                            <p>Creativity</p>
+                            <p class="hidden-text">Of course, creativity is required while solving an issue.</p>
+                        </div>
+                        </div>
+                        <div class="card-container1">
+                        <div id="box7" class="box">
+                            <p>Observation</p>
+                            <p class="hidden-text">I usually always do that, so I placed it in strength since I didn't realize I did it occasionally.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div id="right-section">
+                        <div class="title-container">
+                        <h1 class="section-title">Weaknesses</h1>
+                        </div>
+                        <div class="card-container1">
+                        <div id="box8" class="box">
+                            <p>Design</p>
+                            <p class="hidden-text">For me, I'll use it if it soothes my eyes; but, I'm open to criticism and will adjust it if necessary.</p>
+                        </div>
+                        <div id="box9" class="box">
+                            <p>Troubleshooting</p>
+                            <p class="hidden-text">Just to recognize the various issues with what I'm doing, I need others to help.</p>
+                        </div>
+                        </div>
+                        <div class="card-container1">
+                        <div id="box10" class="box">
+                            <p>Codes Vocabulary</p>
+                            <p class="hidden-text">Since I can't code without tutorials or research, I can officially declare that I'm not good at it. Compared to the Indians I see on YouTube.</p>
+                        </div>
+                        <div id="box11" class="box">
+                            <p>Time Management</p>
+                            <p class="hidden-text">Managing my time is the most difficult thing I have to do in life. since I find it difficult to combat my inclination toward laziness, which makes time management my weakness.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="career" id="career">
+                <div class="container1234">
+                    <div class="container3">
+                        <div class="b-container1">
+                                <div class="t-content1">
+                                    <h1>Career</h1>
+                                    <p>I cannot envision myself doing anything in the future because what I truly want to do is 
+                                        establish my own business, which requires me to work and save. I only considered them since 
+                                        they are linked to what I do and my knowledge.</p>
+                                </div>
+                            <div class="c-content1">
+                                    <div class="card21 id="card1">
+                                        <div class="image-container1">
+                                            <img src="pic/c2.jpg" alt="IT support image">
+                                        </div>
+                                        <div class="card-content1">
+                                            <h3>Tech Support</h3>
+                                            <p>Since I am knowledgeable about computers, whether they be hardware or software. 
+                                                I discovered things because I was inquisitive about them. Since I still have many years to learn,
+                                                perhaps I can learn more about hardware since I also want to practice with computer hardware.</p>
+                                        </div>
+                                    </div>
+                                <div class="card21" id="card2">
+                                    <div class="image-container1">
+                                        <img src="pic/c3.jpg" alt="Web Developer image">
+                                    </div>
+                                    <div class="card-content1">
+                                        <h3>Web Developer</h3>
+                                        <p>My experience with website creation includes brief explorations of PHP and MySQL; perhaps in the future, 
+                                            I'll pursue a career in web development.</p>
+                                    </div>
+                                </div>
+                                <div class="card21" id="card3">
+                                    <div class="image-container1">
+                                        <img src="pic/c1.jpg" alt="UI tester image">
+                                    </div>
+                                    <div class="card-content1">
+                                        <h3>UI/UX Tester</h3>
+                                        <p>I enjoy critiquing and judging user interfaces, so what if I apply it to my knowledge and abilities?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer">
+              <div class="cont">
+                <div class="footer-item">
+                  <div class="about">
+                  <a href="aboutme.html">About Me</a>
+                  <p>I'm 18 years old, a college student pursuing a Bachelor of Science in Information Technology at Pamantansan ng Lungsod ng Pasig.</p>
+                </div>
+                </div>
+                <div class="footer-item">
+                  <a href="more.html">My Family</a>
+                  <p>Roi Yvann M. Cambe</p>
+                  <p>Benjamin G. Cambe</p>
+                  <p>Rosalie M. Cambe</p>
+                  <p>Rea Yvonne M. Cambe</p>
+                </div>
+                <div class="footer-item">
+                  <a href="contact.html" target="_blank">Contact Me</a>
+                  <p>Email: roicambe02@gmail.com</p>
+                  <p>Phone: (63+) 921 528 8612</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+    </div>
+
+    <div id="muteButton" onclick="scrollToTop()">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.card');
+            let currentIndex = 0;
+            let isHovered = false;
+            let intervalId;
+
+            function zoomNext() {
+            if (!isHovered) {
+                boxes[currentIndex].classList.remove('zoomed');
+                currentIndex = (currentIndex + 1) % boxes.length;
+                boxes[currentIndex].classList.add('zoomed');
+                }
+            }
+
+            function pauseAnimation() {
+                isHovered = true;
+                clearInterval(intervalId);
+                this.classList.add('zoomed');
+            }
+
+            function resumeAnimation() {
+                isHovered = false;
+                this.classList.remove('zoomed');
+                intervalId = setInterval(zoomNext, 1000); // Adjust the interval as needed (milliseconds)
+            }
+
+            boxes.forEach((box, index) => {
+                box.addEventListener('mouseenter', pauseAnimation);
+                box.addEventListener('mouseleave', resumeAnimation);
+            });
+
+            intervalId = setInterval(zoomNext, 2000); // Start the initial animation
+        });
+
+        document.querySelectorAll('.card2').forEach(card => {
+        const video = card.querySelector('video');
+            
+            card.addEventListener('mouseenter', () => {
+            video.play();
+            });
+
+            card.addEventListener('mouseleave', () => {
+            video.pause();
+            video.currentTime = 0;
+            });
+        });
+
+        function scrollToSection(sectionId) {
+        var section = document.getElementById(sectionId);
+        window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+        });
+        }
+
+        document.getElementById("muteButton").style.display = "none";
+
+        window.onscroll = function() {
+            var muteButton = document.getElementById("muteButton");
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                muteButton.style.display = "block";
+            } else {
+                muteButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            // Smooth scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Hide the button after scrolling to top
+            document.getElementById("muteButton").style.display = "none";
+        }
+    </script> 
+</body>
+</html>

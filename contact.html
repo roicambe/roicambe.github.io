@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<section class="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <p>Got some questions? We are here to help you. Feel free to address your concerns. Feel free to address us through the contacts below, too.</p>
+        </div>
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><ion-icon name="location-outline"></ion-icon></div>
+                    <div class="text">
+                        <h3>Address</h3>
+                        <p>52 C Santos St. Ugong, Pasig City</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="call-outline"></ion-icon></div>
+                    <div class="text">
+                        <h3>Phone</h3>
+                        <p>(63+) 921 528 8612</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>roicambe02@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm1">
+                <form method="post">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" pattern="([A-Za-z]+\s)+([A-Za-z]{0,1}\.\s)?[A-Za-z]+" placeholder="Full Name" maxlength="60" required title="eg. Juan Dela Cruz, Juan D. Cruz, Juan Cruz">
+                    </div>
+                    <div class="inputBox">
+                        <input type="email" name="email" placeholder="Email Address" maxlength="60" required oninput="validateEmail(this)">                    
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="phone" placeholder="Cellphone Number" maxlength="11" required pattern="09\d{9}" title="Please enter a valid phone number starting with '09'.">
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="message" placeholder="Your Message..." maxlength="260" required></textarea>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="smedia">
+    <div class="container1">
+        <h1 class="title">
+            Frequenty Asked Questions
+        </h1>
+        <main class="accordion">
+            <div class="faq-img">
+                <img src="pic/faq.jpg" alt="" class="accordion-img">
+            </div>
+            <div class="content-accordion">
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            Are you a freelancer?
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        <p>Yes, I'm still a freelancer right now because of my pride, I don't want to approach companies, I want them to approach me. Boss kasi ako</p>
+                    </div>
+                </div>
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            Do you provide any additional services or do you just do programming?
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        <p>Since I edit videos, I might eventually provide video editing services as well. Gusto mo mag alter na rin ako eh, kaso baka walang bumili baka malugi pa ko. Wag na.</p>
+                    </div>
+                </div>
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            What quote can you give me?
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        <p>Chill Lang</p>
+                    </div>
+                </div>
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            How much is your service?
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        <p>Dipende umaabot ng 10k, minsan kiss lang ni crush sapat na.</p>
+                    </div>
+                </div>
+                <div class="question-answer">
+                    <div class="question">
+                        <h3 class="title-question">
+                            Do you have a service where you go to people's houses?
+                        </h3>
+                        <button class="question-btn">
+                            <span class="up-icon">
+                                <i class="fas fa-chevron-up"></i>
+                            </span>
+                            <span class="down-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="answer">
+                        <p>Yes, specially kung mag papainom. Minimum alak na ibibigay sakin Alfonso or Gin Bilog.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </section>
+    <script>
+        const questions = document.querySelectorAll('.question-answer');
+
+questions.forEach(function(question) {
+    const btn = question.querySelector('.question-btn');
+    btn.addEventListener("click", function() {
+        questions.forEach(function(item) {
+            if (item !== question) {
+                item.classList.remove("show-text");
+            }
+        })
+        question.classList.toggle("show-text");
+    })
+})
+
+function validateEmail(input) {
+  var regex = /^[A-Za-z0-9._%+-]+@gmail\.com$/;
+  var isValid = regex.test(input.value);
+  
+  if (!isValid) {
+    input.setCustomValidity("Please enter a valid Gmail address. (eg. example@gmail.com)");
+  } else {
+    input.setCustomValidity("");
+  }
+}
+
+const messageInput = document.querySelector('textarea[name="message"]');
+  messageInput.addEventListener('invalid', function() {
+    this.setCustomValidity('Please input any message.');
+  });
+  messageInput.addEventListener('input', function() {
+    this.setCustomValidity('');
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            alert('Thank you for messaging me!');
+
+            form.reset();
+        });
+    });
+
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact{
+    position: relative;
+    min-height: 75vh;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #153F80;
+    width: 60em;
+    top: 20px;
+    margin:auto;
+    box-shadow: 0px -5px 50px 0px grey;
+}
+
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: #69A4FF;
+}
+
+.contact .content p{
+    font-weight: 300;
+    color: white;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container .contactInfo .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background: white;
+    display: flex;
+    border-radius: 50%;
+    font-size: 30px;
+    color: black;
+}
+
+
+.icon{
+    padding: 15px 10px 0 15px;
+}
+
+
+.container .contactInfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: white;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container .contactInfo .box .text h3{
+    font-weight: 500;
+    color: #69A4FF;
+}
+
+.contactForm1 .contact-form{
+    display: block;
+}
+
+.contactForm1{
+    width: 40%;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    display: block;
+}
+
+.contactForm1 h2{
+    color: #404040;
+}
+
+.contactForm1 .inputBox{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.contactForm1 .inputBox input,
+.contactForm1 .inputBox textarea{
+	width: 100%;
+	padding: 5px 0;
+	font-size: 16px;
+	margin-top: 10px 0;
+	border: none;
+	border-bottom: 2px solid grey;
+	outline: none;
+	resize: none;
+}
+
+.contactForm1 .inputBox span{
+	position: absolute;
+	left: 0;
+	padding: 5px 0;
+	font-size: 16px;
+	margin-top: 10px 0;
+	pointer-events: none;
+	transition: 0.5s;
+	color: #666;
+}
+
+.contactForm1 .inputBox input:focus ~ span,
+.contactForm1 .inputBox input:valid ~ span,
+.contactForm1 .inputBox textarea:focus ~ span,
+.contactForm1 .inputBox textarea:valid ~ span{
+	color: #BE6767;
+	font-size: 12px;
+	transform: translateY(-20px);
+}
+
+.contactForm1 .inputBox input[type="submit"]{
+	width: 100px;
+	background: #038BE5;
+	color: #39f4fb;
+	border: 2px solid;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 25px;
+}
+
+.contactForm1 .inputBox input[type="submit"]:hover{
+	color: #004878;
+	border-color: #004776;
+	transition: .3s;
+}
+
+.button_login {
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background-color: #153F80;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button_login:hover{
+  background-color: #69A4FF; 
+  box-shadow: 0 20px 10px -10px #698BFF;
+}
+
+.button_login:active{
+  background-color: #69CBFF;
+}
+
+.login1{
+  font-family: 'Poppins', sans-serif;
+  width: 130px;
+  padding: 0 0 0 7px;
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  height: 100%;
+}
+
+.contactForm1 .contact-form{
+    display: block;
+}
+
+.smedia{
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.container1 {
+  position: relative;
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 10px
+          rgba(0, 0, 0, 0.5));
+  height: 850px;
+}
+
+.accordion {
+  position: relative;
+  width: 400px;
+  margin-left: 40px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.content-accordion {
+  margin-top: 35px;
+
+}
+
+.question-answer {
+  width: 100%;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion-img {
+  position: relative;
+  width: 320px;
+}
+
+.title-question {
+  margin: 1.4rem 0rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.question-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.up-icon {
+  display: none;
+}
+
+.answer {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  display: none;
+  color: grey;
+}
+
+.show-text .answer {
+  display: block;
+}
+
+.show-text .up-icon {
+  display: inline;
+}
+
+.show-text .down-icon {
+  display: none;
+}
+
+@media screen and (min-width: 980px) {
+    .accordion {
+    width: 920px;
+    height: 0px;
+    display: flex;
+  }
+
+  .accordion-img {
+    position: relative;
+    width: 420px;
+    top: 88px;
+  }
+
+  .question-answer {
+    width: 380px;
+  }
+
+  .content-accordion {
+    margin-top: 85px;
+  }
+
+  .title {
+    margin-top: 50px;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+    .container1{
+    height: 1100px;
+}
+}
+
+@media (max-width: 990px){
+    .contact{
+        padding: 30px;
+        width: 100%;
+    }
+
+    .container{
+        flex-direction: column;
+    }
+
+    .container .contactInfo{
+        margin-bottom: 40px;
+    }
+
+    .container .contactInfo,
+    .contactForm{
+        width: 100%;
+    }
+}
+</style>
+</body>
+</html>
